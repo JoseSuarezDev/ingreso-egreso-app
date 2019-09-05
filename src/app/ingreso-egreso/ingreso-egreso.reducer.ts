@@ -1,8 +1,14 @@
 import { IngresoEgreso } from './ingreso-egreso.model';
 import * as fromIngresoEgreso from './ingreso-egreso.actions';
+import { AppState } from '../app.reducers';
 
 export interface IngresoEgresoState {
     items: IngresoEgreso[];
+}
+
+// Lazy Load
+export interface AppState extends AppState {
+    ingresoEgreso: IngresoEgresoState;
 }
 
 const initState : IngresoEgresoState = {
